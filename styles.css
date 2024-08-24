@@ -1,0 +1,121 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    animation: pulse 2s infinite alternate;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 40px rgba(0, 255, 255, 0.8);
+    }
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
+}
+
+.game-mode {
+    margin-bottom: 2rem;
+}
+
+button {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #0ff;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Orbitron', sans-serif;
+}
+
+button:hover {
+    background-color: #0ff;
+    color: #000;
+    box-shadow: 0 0 10px #0ff;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid #0ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cell:hover {
+    background: rgba(0, 255, 255, 0.2);
+    box-shadow: 0 0 10px #0ff;
+}
+
+.cell.x::before {
+    content: 'X';
+    color: #f0f;
+    text-shadow: 0 0 10px #f0f;
+}
+
+.cell.o::before {
+    content: 'O';
+    color: #0f0;
+    text-shadow: 0 0 10px #0f0;
+}
+
+.status {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    min-height: 2rem;
+}
+
+#reset {
+    margin-top: 1rem;
+}
+
+@keyframes neonFlicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
+    }
+    20%, 22%, 24%, 55% {
+        text-shadow: none;
+    }
+}
+
+.neon-flicker {
+    animation: neonFlicker 2s infinite alternate;
+}
